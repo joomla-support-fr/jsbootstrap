@@ -1,0 +1,127 @@
+// REPRISE "bootstrap-extended" DE STRAPPED
+// adjusting for sublevel menu items since b.s. doesn't allow for more than 1 sublevel 
+// 09/10/12: traduction LESS par lomart pour prise charge couleurs de variables.less
+
+/*  debut less bootstrap-extended */
+
+.nav {
+	position:relative;
+	.caret {
+		margin-top: 8px;
+		margin-left: 2px;
+	}
+	ul .caret {
+		margin-top: 8px;
+		margin-left: 2px;
+		display:none;
+	}
+	.dropdown-menu li .flyout-menu {
+		left:100%;
+		top:0;
+	}
+	li {
+		position:relative;
+		z-index: 597;
+	}
+	.flyout-menu {
+		visibility: hidden;
+		position: absolute;
+		top: 100%;
+		z-index: @zindexDropdown;
+		float: left;
+		min-width: 160px;
+		max-width: 220px;
+		_width: 160px;
+		padding: 4px 0;
+		margin: 0;
+		list-style: none;
+		background-color: @dropdownBackground;
+		border: 1px solid #ccc; // Fallback for IE7-8
+		border: 1px solid @dropdownBorder;
+		*border-right-width: 2px;
+		*border-bottom-width: 2px;
+		.border-radius(5px);
+		.box-shadow (0 5px 10px rgba(0, 0, 0, 0.2));
+		-webkit-background-clip: padding-box;
+		-moz-background-clip: padding;
+		background-clip: padding-box;
+		*border-right-width: 2px;
+		*border-bottom-width: 2px;
+	}
+	.flyout-menu li {
+		position:relative;
+		float: none;
+		white-space:nowrap;
+		margin:0;
+		padding:0;
+		border:0;
+	}
+	.flyout-menu li a {
+		display: block;
+		padding: 3px 15px;
+		clear: both;
+		font-weight: normal;
+		line-height: 18px;
+		color: @dropdownLinkColor;
+		white-space: nowrap;
+	}
+	.flyout-menu li > a:hover, 
+	.flyout-menu .active > a, 
+	.flyout-menu .active > a:hover {
+		color: @dropdownLinkColorHover;
+		text-decoration: none;
+		background-color: @dropdownLinkBackgroundHover;
+	}
+	.flyout-menu ul {
+		top:-5px;
+		left:100%;
+		.border-radius(2px);
+	}
+	li:hover > .flyout-menu {
+		visibility:visible;
+	}	
+}
+
+.navbar {
+	.caret, 
+	.nav .caret {
+		border-top-color: @white;
+	}
+	.nav .active .caret {
+		opacity: 1;
+		filter: alpha(opacity=100);
+	}
+}
+
+.nav-pills .caret {
+		margin-top:6px;
+}
+
+/* menus with nav-stacked suffix */
+
+	.nav-stacked ul, 
+	.nav-list ul {
+		list-style:none;
+	}
+	.nav-stacked ul li a, 
+	.nav-list ul li a {
+		display:block;
+		padding:3px 5px;
+		margin:1px 0;
+	}
+	.nav-stacked ul .active > a, 
+	.nav-stacked ul .active > a:hover, 
+	.nav-list ul .active > a, 
+	.nav-list ul .active > a:hover {
+		color: black;
+		background-color: transparent;
+	}
+	.nav-tabs.nav-stacked > li > ul {
+		margin:0;
+		padding-left:8px;
+		background:#f8f8f8;
+		border:1px solid #ddd;
+		border-top:0;
+	}
+
+/*  fin less */

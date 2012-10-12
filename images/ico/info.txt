@@ -1,0 +1,1 @@
+le favicon.ico est l'image png convertie en .ico avec xnView

@@ -1,0 +1,126 @@
+// ----------------------------------------------------------------------
+// JSB-EDIT : regroupe les classes utiles lors de la rédaction d'articles
+// ----------------------------------------------------------------------
+// lomart 15-09-12
+
+// ======================================================================
+// Positionnement des images ou textes dans un bloc
+// ----------------------------------------------------------------------
+// les classes leftXX et rightXX permettent de conserver la mise en page 
+// lors du passage en mode smartphone.
+// gestion des marges nécessaires et forcent la largeur des images à 100%
+// utilisation :
+// <div class="left30">...</div>  <!-- 1ere colonne -->
+// <div class="left70">...</div>  <!-- 2ere colonne -->
+// ou
+// <div class="clearfix"> ...</div> <!-- colonne fluide -->
+// ======================================================================
+
+// classes left10, left20, ..., left90
+.mixin-left(@percent, @margin:2%) {
+    float:left; 
+    width:(@percent - @margin); 
+    margin-right:@margin;
+    img {
+        width:100%; margin-bottom:(@margin*2);
+        &:last-child, &:only-child {margin-bottom:0}
+    }
+    &:last-child {width:@percent; margin-right:0}
+}
+.leftX (@index) when (@index > 0) {
+      (~".left@{index}") { .mixin-left(@index); }
+      .leftX(@index - 10);
+    }
+.leftX (0) {}
+.leftX (90);
+
+
+// classes right10, right20, ..., right90
+.mixin-right(@percent, @margin:2%) {
+    float:right; 
+    width:(@percent - @margin); 
+    margin-right:@margin;
+    img {
+        width:100%; margin-bottom:(@margin*2);
+        &:last-child, &:only-child {margin-bottom:0}
+    }
+    &:last-child {width:@percent; margin-right:0}
+}
+.rightX (@index) when (@index > 0) {
+      (~".right@{index}") { .mixin-right(@index); }
+      .rightX(@index - 10);
+    }
+.rightX (0) {}
+.rightX (90);
+
+// ======================================================================
+// Ajoute des padding en haut et en bas d'un bloc
+// ======================================================================
+.vpaddingX (@index) when (@index > 0) {
+      (~".vpadding@{index}") { padding-top:(@index + 0px); padding-bottom:(@index + 0px);}
+      .vpaddingX(@index - 10);
+    }
+.vpaddingX (0) {}
+.vpaddingX (40);
+
+// Permet de centrer verticalement un contenu dans un autre
+div.vh-center {
+	width:100%;
+	height:100%;
+    display:table;
+	text-align: center;
+	div {
+		display:table-cell;
+		vertical-align:middle;
+	}
+}
+
+// ======================================================================
+// Divers
+// ----------------------------------------------------------------------
+.align-right {text-align:right}
+.align-left {text-align:left}
+.align-center {text-align:center}
+.align-justify {text-align:justify}
+
+// ======================================================================
+// Enjoliveurs
+// ----------------------------------------------------------------------
+
+// .icon-chevron-right & .icon-chevron-left
+// ======================================================================
+// POUR MEMOIRE, classes de bootstrap
+// ----------------------------------------------------------------------
+// .pull-left {float:right;}
+// .pull-right {float:right;}
+// .clearfix {...}
+
+// ======================================================================
+// Complément bootstrap by lomart
+// ----------------------------------------------------------------------
+
+.visible-large    { display: inherit !important; }
+.hidden-large   { display: none !important ; }
+
+@media (max-width: 1200px) {
+.visible-large    { display: none !important; }
+.hidden-large   { display: inherit !important; }
+}
+@media (min-width: 1200px) {
+.visible-desktop    { display: none !important; }
+.hidden-desktop   { display: inherit !important; }
+}
+
+// normalisation alert : marges égales et .alert-block même couleur que .alert
+.alert {padding: 8px}
+//.alert-block { 
+   // padding: 14px 8px;
+    // background-color: @warningBackground;
+    // border: 1px solid @warningBorder;
+    // color: @warningText;
+// }
+// .alert-warning {
+  // background-color: @warningBackground;
+  // border-color: @warningBorder;
+  // color: @warningText;
+// }

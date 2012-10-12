@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.0" type="template" client="site" method="upgrade">
+<name>JSBootstrap</name>
+<version>1.0</version>
+<creationDate>2012-09-30</creationDate>
+<author>lomart</author>
+<authorUrl>www.joomla-support.fr</authorUrl>
+<copyright>Copyright (C) 2012</copyright>
+<description>JSB_DESC</description>
+	<files>
+		<filename>index.html</filename>
+		<filename>index.php</filename>
+		<filename>error.php</filename>
+		<filename>offline.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>jsb-positions.jpg</filename>
+		<folder>css</folder>
+		<folder>elements</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>language</folder>
+		<folder>less</folder>
+	</files>
+	<positions>
+		<position>navbar</position>
+		<position>header-body</position>
+		<position>menu-body</position>
+		<position>header-page</position>
+		<position>menu-page</position>
+		<position>breadcrumb-top</position>
+		<position>user-top-1</position>
+		<position>user-top-2</position>
+		<position>user-top-3</position>
+		<position>user-top-4</position>
+		<position>sidebar-left</position>
+		<position>content-top</position>
+		<position>content-bottom</position>
+		<position>sidebar-right</position>
+		<position>user-bottom-1</position>
+		<position>user-bottom-2</position>
+		<position>user-bottom-3</position>
+		<position>user-bottom-4</position>
+		<position>breadcrumb-bottom</position>
+		<position>footer</position>
+		<position>footer-page</position>
+		<position>footer-body</position>
+		<position>footer-fixed</position>
+		<position>debug</position>
+	</positions>
+
+	<languages folder="language">
+		<language tag="fr-FR">fr-FR/fr-FR.tpl_JSBootstrap.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic"  addfieldpath="/templates/JSBootstrap/elements/">
+				<field name="title_layout" type="title" label="LAYOUT_LABEL" style="STYLE_BOX"/>
+				<field name="tpl-layout" type="radio" default="0" label="TPL_LAYOUT_LABEL" description="TPL_LAYOUT_DESC">
+					<option value="0">Statique</option>
+					<option value="1">Fluide</option>
+				</field>
+				<field name="tpl-span-left" type="list" default="2" label="TPL_SPAN_LEFT_LABEL" description="TPL_SPAN_LEFT_DESC">
+					<option value="2">-- 2/12 --</option>
+					<option value="3">-- 3/12 --</option>
+					<option value="4">-- 4/12 --</option>
+					<option value="5">-- 5/12 --</option>
+				</field>
+				<field name="tpl-span-right" type="list" default="2" label="TPL_SPAN_RIGHT_LABEL" description="TPL_SPAN_RIGHT_DESC">
+					<option value="2">-- 2/12 --</option>
+					<option value="3">-- 3/12 --</option>
+					<option value="4">-- 4/12 --</option>
+					<option value="5">-- 5/12 --</option>
+				</field>
+				<!-- Position et contenu navbar-->
+			<field name="title_menutop" type="title" label="TITLE_MENUTOP_LABEL" style="STYLE_BOX"/>
+				<field name="navbar-position" type="list" default="navbar-fixed-top" label="TPL_NAVBAR_POSITION_LABEL" description="TPL_NAVBAR_POSITION_DESC">
+				  <option value="navbar-static-top">TPL_NAVBAR_STATIC_TOP</option>
+				  <option value="navbar-fixed-top">TPL_NAVBAR_FIXED_TOP</option>
+				  <option value="navbar-fixed-bottom">TPL_NAVBAR_FIXED_BOTTOM</option>
+				</field>
+				<!-- navbar-left -->
+				<field type="title" name="spacer1" style="STYLE_HR" />
+				<field name="navbar-left-type" type="list" default="none" label="TPL_NAVBAR_LEFT_TYPE_LABEL" description="TPL_NAVBAR_LEFT_TYPE_DESC">
+				  <option value="none">TPL_NAVBAR_NONE</option>
+				  <option value="sitename">TPL_NAVBAR_SITENAME</option>
+				  <option value="logo">TPL_NAVBAR_LOGO</option>
+				  <option value="position">TPL_NAVBAR_POSITION</option>
+				</field>
+				<field name="navbar-left-pos" type="text" label="TPL_NAVBAR_LEFT_POS_LABEL" size="20" description="TPL_NAVBAR_LEFT_POS_DESC" />
+				<field name="navbar-left-image" type="media" label="TPL_NAVBAR_LEFT_IMAGE_LABEL" description="TPL_NAVBAR_LEFT_IMAGE_DESC" />
+				<!-- navbar-right -->
+				<field type="title" name="spacer2" style="STYLE_HR" />
+				<field name="navbar-right-type" type="list" default="none" label="TPL_NAVBAR_RIGHT_TYPE_LABEL" description="TPL_NAVBAR_RIGHT_TYPE_DESC">
+				  <option value="none">TPL_NAVBAR_NONE</option>
+				  <option value="sitename">TPL_NAVBAR_SITENAME</option>
+				  <option value="logo">TPL_NAVBAR_LOGO</option>
+				  <option value="position">TPL_NAVBAR_POSITION</option>
+				</field>
+				<field name="navbar-right-pos" type="text" label="TPL_NAVBAR_RIGHT_POS_LABEL" size="20" description="TPL_NAVBAR_RIGHT_POS_DESC" />
+				<field name="navbar-right-image" type="media" label="TPL_NAVBAR_RIGHT_IMAGE_LABEL" description="TPL_NAVBAR_RIGHT_IMAGE_DESC" />
+				<field name="navbar-right-phone" type="list" default="hidden" label="TPL_NAVBAR_RIGHT_PHONE_LABEL" description="TPL_NAVBAR_RIGHT_PHONE_DESC">
+				  <option value="hidden">TPL_NAVBAR_HIDDEN</option>
+				  <option value="float">TPL_NAVBAR_ATLEFT</option>
+				</field>
+				<!-- Fichier CSS spécial allergie au LESS -->
+				<field name="title_css" type="title" label="TITLE_CSS" style="STYLE_BOX"/>
+				<field name="css-file" type="filelist" directory="templates/JSBootstrap/css" filter="\.css" exclude="template.css" hide_default="true" label="CSS_FILE_LABEL" description="CSS_FILE_DESC" size="1" />
+				<!-- Suffixe de classe pour les blocs -->
+				<field name="title_classe" type="title" label="TITLE_CLASS_LABEL" style="STYLE_BOX"/>
+				<field name="class-wrapper-page" type="text" label="CLASS_WRAPPER_PAGE_LABEL" size="30" />
+				<field name="class-breadcrumb-top" type="text" label="CLASS_BREADCRUMB_TOP_LABEL" size="30" />
+				<field name="class-wrapper-user-top" type="text" label="CLASS_WRAPPER_USERTOP_LABEL" size="30" />
+				<field name="class-user-top" type="text" label="CLASS_USERTOP_LABEL" size="30" />
+				<field name="class-wrapper-middle" type="text" label="CLASS_WRAPPER_MIDDLE_LABEL" size="30" />
+				<field name="class-sidebar-left" type="text" label="CLASS_SIDEBARLEFT_LABEL" size="30" />
+				<field name="class-wrapper-middle-content" type="text" label="CLASS_WRAPPER_MIDDLECONTENT_LABEL" size="30" />
+				<field name="class-content-top" type="text" label="CLASS_CONTENTTOP_LABEL" size="30" />
+				<field name="class-component" type="text" label="CLASS_COMPONENT_LABEL" size="30" />
+				<field name="class-content-bottom" type="text" label="CLASS_CONTENT_BOTTOM_LABEL" size="30" />
+				<field name="class-sidebar-right" type="text" label="CLASS_SIDEBARRIGHT_LABEL" size="30" />
+				<field name="class-wrapper-user-bottom" type="text" label="CLASS_WRAPPER_USERBOTTOM_LABEL" size="30" />
+				<field name="class-user-bottom" type="text" label="CLASS_USERBOTTOM_LABEL" size="30" />
+				<field name="class-breadcrumb-bottom" type="text" label="CLASS_BREADCRUMB_BOTTOM_LABEL" size="30" />
+			</fieldset>			
+
+			<fieldset name="JS" label="Javascript">
+				<field name="tpl-jquery" type="radio" default="1" label="TPL_JQUERY_LABEL" description="TPL_JQUERY_DESC">
+					<option value="1">Oui</option>
+					<option value="0">Non</option>
+				</field>
+			</fieldset>
+
+		</fields>
+	</config>
+
+</extension>
