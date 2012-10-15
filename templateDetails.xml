@@ -58,7 +58,7 @@
 
 	<config>
 		<fields name="params">
-			<fieldset name="basic"  addfieldpath="/templates/JSBootstrap/elements/">
+			<fieldset name="basic"  addfieldpath="/templates/jsbootstrap/elements/">
 				<field name="title_layout" type="title" label="LAYOUT_LABEL" style="STYLE_BOX"/>
 				<field name="tpl-layout" type="radio" default="0" label="TPL_LAYOUT_LABEL" description="TPL_LAYOUT_DESC">
 					<option value="0">Statique</option>
@@ -109,7 +109,7 @@
 				</field>
 				<!-- Fichier CSS spécial allergie au LESS -->
 				<field name="title_css" type="title" label="TITLE_CSS" style="STYLE_BOX"/>
-				<field name="css-file" type="filelist" directory="templates/JSBootstrap/css" filter="\.css" exclude="template.css" hide_default="true" label="CSS_FILE_LABEL" description="CSS_FILE_DESC" size="1" />
+				<field name="css-file" type="filelist" directory="templates/jsbootstrap/css" filter="\.css" exclude="template.css" hide_default="true" label="CSS_FILE_LABEL" description="CSS_FILE_DESC" size="1" />
 				<!-- Suffixe de classe pour les blocs -->
 				<field name="title_classe" type="title" label="TITLE_CLASS_LABEL" style="STYLE_BOX"/>
 				<field name="class-wrapper-page" type="text" label="CLASS_WRAPPER_PAGE_LABEL" size="30" />
