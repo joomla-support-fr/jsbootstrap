@@ -8,6 +8,7 @@ TODO
 
 15/10/2012 07:00 by Ghazal
 --------------------------
+- correction typo dans templateDtails.xml et les fichiers langue -> JSBootstrap au lieu de jsbootstrap
 - modification d'index.php, déplacement de l'appel jQuery
 
 10/10/2012 07:00 by Lomart
