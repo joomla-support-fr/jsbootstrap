@@ -6,7 +6,7 @@ TODO
 - créer logo et icone JSB
 - error.php et offline.php avec un look bootstrap
 
-15/10/2012 07:00 by Lomart
+15/10/2012 07:00 by Ghazal
 --------------------------
 - modification d'index.php, déplacement de l'appel jQuery
 
