@@ -61,9 +61,9 @@ $span_userbottom = ($nb_bloc > 0 ? (12 / $nb_bloc) : 0);
 <head>
 	<meta charset="<?php echo $this->getCharset(); ?>" />
 	<?php $this->setGenerator(null); // cacher joomla dans la balise générator (pour les hackers!) ?>
-	<jdoc:include type="head" />
-	<?php // ==== Le styles ?>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+			<?php if ($this->params->get('tpl-jquery', 1)) : ?>
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" media="screen" />
 	<?php if ($css_file!='-1') : ?>
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/<?php echo $css_file ?>" type="text/css" media="screen" />
@@ -81,6 +81,20 @@ $span_userbottom = ($nb_bloc > 0 ? (12 / $nb_bloc) : 0);
 	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/ico/apple-touch-icon-114x114.png" />
 	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/ico/apple-touch-icon-72x72.png" />
 	<link rel="apple-touch-icon" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/ico/apple-touch-icon-57x57.png /">
+	
+	<!-- appel jQuery avant type head -->
+	
+	<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/jquery.js"></script>
+	<?php endif; ?>
+	<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/bootstrap.min.js"></script>
+	<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/bootstrap-tab.js"></script>
+	<script type="text/javascript">
+jQuery.noConflict();
+
+	</script>
+	<jdoc:include type="head" />
+
+
 
 </head>
 
@@ -393,13 +407,7 @@ $span_userbottom = ($nb_bloc > 0 ? (12 / $nb_bloc) : 0);
 	// JAVASCRIPT
 	// ================================================== 
 	// Mis en fin du document pour un chargement plus rapide des pages ?>
-	<?php if ($this->params->get('tpl-jquery', 1)) : ?>
-	<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/jquery.js"></script>
-	<?php endif; ?>
-	<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-		jQuery.noConflict();
-	</script>
+
 
 </body>
 </html>
