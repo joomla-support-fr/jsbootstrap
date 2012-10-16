@@ -398,10 +398,6 @@ $span_userbottom = ($nb_bloc > 0 ? (12 / $nb_bloc) : 0);
 	<jdoc:include type="modules" name="debug" />
 
 	<?php 
-	// JAVASCRIPT
-	// ================================================== 
-	// Mis en fin du document pour un chargement plus rapide des pages ?>
-
 
 </body>
 </html>
