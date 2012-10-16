@@ -397,7 +397,5 @@ $span_userbottom = ($nb_bloc > 0 ? (12 / $nb_bloc) : 0);
 
 	<jdoc:include type="modules" name="debug" />
 
-	<?php 
-
 </body>
 </html>
