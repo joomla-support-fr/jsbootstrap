@@ -6,6 +6,10 @@ TODO
 - créer logo et icone JSB
 - error.php et offline.php avec un look bootstrap
 
+02/11/2012 07:00 by Ghazal
+--------------------------
+- mise à jour de la version de Lomart : jsbootstrap-20121031-2130-lomart
+
 15/10/2012 07:00 by Ghazal
 --------------------------
 - correction typo dans templateDtails.xml et les fichiers langue -> JSBootstrap au lieu de jsbootstrap
