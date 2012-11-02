@@ -11,6 +11,8 @@ defined('_JEXEC') or die;
 $class = ' class="first"';
 ?>
 
+<div class="badge badge-success">com_content\category\blog_children.php</div>
+
 <?php if (count($this->children[$this->category->id]) > 0 && $this->maxLevel != 0) : ?>
 
 	<?php foreach($this->children[$this->category->id] as $id => $child) : ?>

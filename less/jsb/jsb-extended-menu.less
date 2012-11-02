@@ -65,8 +65,12 @@
 		color: @dropdownLinkColor;
 		white-space: nowrap;
 	}
+	.flyout-menu .active > a {
+		color: @dropdownLinkColorActive;
+		text-decoration: none;
+		background-color: @dropdownLinkBackgroundActive;
+	}
 	.flyout-menu li > a:hover, 
-	.flyout-menu .active > a, 
 	.flyout-menu .active > a:hover {
 		color: @dropdownLinkColorHover;
 		text-decoration: none;

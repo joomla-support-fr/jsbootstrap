@@ -1,0 +1,414 @@
+//
+// Classes pour faire une page information 
+// sur le contenu des variables du fichiers Variables.less
+// --------------------------------------------------
+// ce fichier doit être dans le même dossier sur variables.less
+// --------------------------------------------------
+
+@import "variables.less";
+
+//---------------------------------------------------
+//  MIXINS
+//---------------------------------------------------
+.contraste (@color) when (lightness(@color) >= 50%) {color:black;}
+.contraste (@color) when not(lightness(@color) >= 50%) {color:white;}
+.contraste (@color) {background-color:@color;}
+
+.info(@val) when (iscolor(@val)) {
+	.contraste(@val);
+}
+.info(@val) {
+    &:after {content:%(": %s",  ~"@{val}");}
+}
+
+.bt-info(@val) when (iscolor(@val)) {
+	background-color: @val;
+    .contraste(@val);
+    &:after {content:%("%s",  ~"@{val}");}
+}
+.bt-info(@val) when not (iscolor(@val)) {
+    background-color: #FFF;
+    color: #000;
+    &:after {content:%("%s",  ~"@{val}");}
+}
+
+// Global values
+// --------------------------------------------------
+
+
+// Grays
+// -------------------------
+.black { .info(@black); }	//            #000;
+.grayDarker { .info(@grayDarker); }	//       #222;
+.grayDark { .info(@grayDark); }	//         #333;
+.gray { .info(@gray); }	//             #555;
+.grayLight { .info(@grayLight); }	//        #999;
+.grayLighter { .info(@grayLighter); }	//      #eee;
+.white { .info(@white); }	//            #fff;
+
+
+// Accent colors
+// -------------------------
+.blue { .info(@blue); }	//             #049cdb;
+.blueDark { .info(@blueDark); }	//         #0064cd;
+.green { .info(@green); }	//            #46a546;
+.red { .info(@red); }	//              #9d261d;
+.yellow { .info(@yellow); }	//           #ffc40d;
+.orange { .info(@orange); }	//           #f89406;
+.pink { .info(@pink); }	//             #c3325f;
+.purple { .info(@purple); }	//           #7a43b6;
+
+
+// Scaffolding
+// -------------------------
+.bodyBackground { .info(@bodyBackground); }	//   @white;
+.textColor { .info(@textColor); }	//        @grayDark;
+
+
+// Links
+// -------------------------
+.linkColor { .info(@linkColor); }	//        #08c;
+.linkColorHover { .info(@linkColorHover); }	//   darken(@linkColor, 15%);
+
+
+// Typography
+// -------------------------
+.sansFontFamily { .info(@sansFontFamily); }	//   "Helvetica Neue", Helvetica, Arial, sans-serif;
+.serifFontFamily { .info(@serifFontFamily); }	//  Georgia, "Times New Roman", Times, serif;
+.monoFontFamily { .info(@monoFontFamily); }	//   Monaco, Menlo, Consolas, "Courier New", monospace;
+
+.baseFontSize { .info(@baseFontSize); }	//     14px;
+.baseFontFamily { .info(@baseFontFamily); }	//   @sansFontFamily;
+.baseLineHeight { .info(@baseLineHeight); }	//   20px;
+.altFontFamily { .info(@altFontFamily); }	//    @serifFontFamily;
+
+.headingsFontFamily { .info(@headingsFontFamily); }	// inherit; // empty to use BS default, @baseFontFamily
+.headingsFontWeight { .info(@headingsFontWeight); }	// bold;	// instead of browser default, bold
+.headingsColor { .info(@headingsColor); }	//    inherit; // empty to use BS default, @textColor
+
+
+// Tables
+// -------------------------
+.tableBackground { .info(@tableBackground); }	//              transparent; // overall background-color
+.tableBackgroundAccent { .info(@tableBackgroundAccent); }	//        #f9f9f9; // for striping
+.tableBackgroundHover { .info(@tableBackgroundHover); }	//         #f5f5f5; // for hover
+.tableBorder { .info(@tableBorder); }	//                  #ddd; // table and cell border
+
+
+// Buttons
+// -------------------------
+.btnBackground { .info(@btnBackground); }	//                @white;
+.btnBackgroundHighlight { .info(@btnBackgroundHighlight); }	//       darken(@white, 10%);
+.btnBorder { .info(@btnBorder); }	//                    #bbb;
+
+.btnPrimaryBackground { .info(@btnPrimaryBackground); }	//         @linkColor;
+.btnPrimaryBackgroundHighlight { .info(@btnPrimaryBackgroundHighlight); }	//spin(@btnPrimaryBackground, 20%);
+
+.btnInfoBackground { .info(@btnInfoBackground); }	//            #5bc0de;
+.btnInfoBackgroundHighlight { .info(@btnInfoBackgroundHighlight); }	//   #2f96b4;
+
+.btnSuccessBackground { .info(@btnSuccessBackground); }	//         #62c462;
+.btnSuccessBackgroundHighlight { .info(@btnSuccessBackgroundHighlight); }	//#51a351;
+
+.btnWarningBackground { .info(@btnWarningBackground); }	//         lighten(@orange, 15%);
+.btnWarningBackgroundHighlight { .info(@btnWarningBackgroundHighlight); }	//@orange;
+
+.btnDangerBackground { .info(@btnDangerBackground); }	//          #ee5f5b;
+.btnDangerBackgroundHighlight { .info(@btnDangerBackgroundHighlight); }	// #bd362f;
+
+.btnInverseBackground { .info(@btnInverseBackground); }	//         #444;
+.btnInverseBackgroundHighlight { .info(@btnInverseBackgroundHighlight); }	//@grayDarker;
+
+
+// Forms
+// -------------------------
+.inputBackground { .info(@inputBackground); }	//          @white;
+.inputBorder { .info(@inputBorder); }	//              #ccc;
+.inputBorderRadius { .info(@inputBorderRadius); }	//        3px;
+.inputDisabledBackground { .info(@inputDisabledBackground); }	//  @grayLighter;
+.formActionsBackground { .info(@formActionsBackground); }	//    #f5f5f5;
+
+// Dropdowns
+// -------------------------
+.dropdownBackground { .info(@dropdownBackground); }	//       @white;
+.dropdownBorder { .info(@dropdownBorder); }	//           rgba(0,0,0,.2);
+.dropdownDividerTop { .info(@dropdownDividerTop); }	//       #e5e5e5;
+.dropdownDividerBottom { .info(@dropdownDividerBottom); }	//    @white;
+
+.dropdownLinkColor { .info(@dropdownLinkColor); }	//        @grayDark;
+
+.dropdownLinkColorHover { .info(@dropdownLinkColorHover); }	//   @white;
+.dropdownLinkBackgroundHover { .info(@dropdownLinkBackgroundHover); }	//@dropdownLinkBackgroundActive;
+
+.dropdownLinkColorActive { .info(@dropdownLinkColorActive); }	//  @dropdownLinkColor;
+.dropdownLinkBackgroundActive { .info(@dropdownLinkBackgroundActive); }	// @linkColor;
+
+
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+// Z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+.zindexDropdown { .info(@zindexDropdown); }	//     1000;
+.zindexPopover { .info(@zindexPopover); }	//      1010;
+.zindexTooltip { .info(@zindexTooltip); }	//      1030;
+.zindexFixedNavbar { .info(@zindexFixedNavbar); }	//  1030;
+.zindexModalBackdrop { .info(@zindexModalBackdrop); }	//1040;
+.zindexModal { .info(@zindexModal); }	//        1050;
+
+
+// Sprite icons path
+// -------------------------
+.iconSpritePath { .info(@iconSpritePath); }	//     "../images/glyphicons-halflings.png";
+.iconWhiteSpritePath { .info(@iconWhiteSpritePath); }	//"../images/glyphicons-halflings-white.png";
+
+
+// Input placeholder text color
+// -------------------------
+.placeholderText { .info(@placeholderText); }	//    @grayLight;
+
+
+// Hr border color
+// -------------------------
+.hrBorder { .info(@hrBorder); }	//           @grayLighter;
+
+
+// Wells
+// -------------------------
+.wellBackground { .info(@wellBackground); }	//             #f5f5f5;
+
+
+// Navbar
+// -------------------------
+.navbarCollapseWidth { .info(@navbarCollapseWidth); }	//        979px;
+
+.navbarHeight { .info(@navbarHeight); }	//               40px;
+.navbarBackground { .info(@navbarBackground); }	//           darken(@navbarBackgroundHighlight, 5%);
+.navbarBackgroundHighlight { .info(@navbarBackgroundHighlight); }	//  #ffffff;
+.navbarBorder { .info(@navbarBorder); }	//               darken(@navbarBackground, 12%);
+
+.navbarText { .info(@navbarText); }	//                 @gray;
+.navbarLinkColor { .info(@navbarLinkColor); }	//            @gray;
+.navbarLinkColorHover { .info(@navbarLinkColorHover); }	//       @grayDark;
+.navbarLinkColorActive { .info(@navbarLinkColorActive); }	//      @gray;
+.navbarLinkBackgroundHover { .info(@navbarLinkBackgroundHover); }	//  transparent;
+.navbarLinkBackgroundActive { .info(@navbarLinkBackgroundActive); }	// darken(@navbarBackground, 5%);
+
+.navbarBrandColor { .info(@navbarBrandColor); }	//           @navbarLinkColor;
+
+// Inverted navbar
+.navbarInverseBackground { .info(@navbarInverseBackground); }	//           #111111;
+.navbarInverseBackgroundHighlight { .info(@navbarInverseBackgroundHighlight); }	//  #222222;
+.navbarInverseBorder { .info(@navbarInverseBorder); }	//               #252525;
+
+.navbarInverseText { .info(@navbarInverseText); }	//                 @grayLight;
+.navbarInverseLinkColor { .info(@navbarInverseLinkColor); }	//            @grayLight;
+.navbarInverseLinkColorHover { .info(@navbarInverseLinkColorHover); }	//       @white;
+.navbarInverseLinkColorActive { .info(@navbarInverseLinkColorActive); }	//      @navbarInverseLinkColorHover;
+.navbarInverseLinkBackgroundHover { .info(@navbarInverseLinkBackgroundHover); }	//  transparent;
+.navbarInverseLinkBackgroundActive { .info(@navbarInverseLinkBackgroundActive); }	// @navbarInverseBackground;
+
+.navbarInverseSearchBackground { .info(@navbarInverseSearchBackground); }	//     lighten(@navbarInverseBackground, 25%);
+.navbarInverseSearchBackgroundFocus { .info(@navbarInverseSearchBackgroundFocus); }	//@white;
+.navbarInverseSearchBorder { .info(@navbarInverseSearchBorder); }	//         @navbarInverseBackground;
+.navbarInverseSearchPlaceholderColor { .info(@navbarInverseSearchPlaceholderColor); }	// #ccc;
+
+.navbarInverseBrandColor { .info(@navbarInverseBrandColor); }	//           @navbarInverseLinkColor;
+
+
+// Pagination
+// -------------------------
+.paginationBackground { .info(@paginationBackground); }	//           #fff;
+.paginationBorder { .info(@paginationBorder); }	//               #ddd;
+.paginationActiveBackground { .info(@paginationActiveBackground); }	//     #f5f5f5;
+
+
+// Hero unit
+// -------------------------
+.heroUnitBackground { .info(@heroUnitBackground); }	//         @grayLighter;
+.heroUnitHeadingColor { .info(@heroUnitHeadingColor); }	//       inherit;
+.heroUnitLeadColor { .info(@heroUnitLeadColor); }	//          inherit;
+
+
+// Form states and alerts
+// -------------------------
+.warningText { .info(@warningText); }	//        #c09853;
+.warningBackground { .info(@warningBackground); }	//  #fcf8e3;
+.warningBorder { .info(@warningBorder); }	//      darken(spin(@warningBackground, -10), 3%);
+
+.errorText { .info(@errorText); }	//            #b94a48;
+.errorBackground { .info(@errorBackground); }	//      #f2dede;
+.errorBorder { .info(@errorBorder); }	//          darken(spin(@errorBackground, -10), 3%);
+
+.successText { .info(@successText); }	//          #468847;
+.successBackground { .info(@successBackground); }	//    #dff0d8;
+.successBorder { .info(@successBorder); }	//        darken(spin(@successBackground, -10), 5%);
+
+.infoText { .info(@infoText); }	//             #3a87ad;
+.infoBackground { .info(@infoBackground); }	//       #d9edf7;
+.infoBorder { .info(@infoBorder); }	//           darken(spin(@infoBackground, -10), 7%);
+
+
+// Tooltips and popovers
+// -------------------------
+.tooltipColor { .info(@tooltipColor); }	//         #fff;
+.tooltipBackground { .info(@tooltipBackground); }	//    #000;
+.tooltipArrowWidth { .info(@tooltipArrowWidth); }	//    5px;
+.tooltipArrowColor { .info(@tooltipArrowColor); }	//    @tooltipBackground;
+
+.popoverBackground { .info(@popoverBackground); }	//    #fff;
+.popoverArrowWidth { .info(@popoverArrowWidth); }	//    10px;
+.popoverArrowColor { .info(@popoverArrowColor); }	//    #fff;
+.popoverTitleBackground { .info(@popoverTitleBackground); }	// darken(@popoverBackground, 3%);
+
+// Special enhancement for popovers
+.popoverArrowOuterWidth { .info(@popoverArrowOuterWidth); }	// @popoverArrowWidth + 1;
+.popoverArrowOuterColor { .info(@popoverArrowOuterColor); }	// rgba(0,0,0,.25);
+
+
+
+// GRID
+// --------------------------------------------------
+
+
+// Default 940px grid
+// -------------------------
+.gridColumns { .info(@gridColumns); }	//          12;
+.gridColumnWidth { .info(@gridColumnWidth); }	//      60px;
+.gridGutterWidth { .info(@gridGutterWidth); }	//      20px;
+.gridRowWidth { .info(@gridRowWidth); }	//         (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+
+// 1200px min
+.gridColumnWidth1200 { .info(@gridColumnWidth1200); }	//  70px;
+.gridGutterWidth1200 { .info(@gridGutterWidth1200); }	//  30px;
+.gridRowWidth1200 { .info(@gridRowWidth1200); }	//     (@gridColumns * @gridColumnWidth1200) + (@gridGutterWidth1200 * (@gridColumns - 1));
+
+// 768px-979px
+.gridColumnWidth768 { .info(@gridColumnWidth768); }	//   42px;
+.gridGutterWidth768 { .info(@gridGutterWidth768); }	//   20px;
+.gridRowWidth768 { .info(@gridRowWidth768); }	//      (@gridColumns * @gridColumnWidth768) + (@gridGutterWidth768 * (@gridColumns - 1));
+
+
+// Fluid grid
+// -------------------------
+.fluidGridColumnWidth { .info(@fluidGridColumnWidth); }	// percentage(@gridColumnWidth/@gridRowWidth);
+.fluidGridGutterWidth { .info(@fluidGridGutterWidth); }	// percentage(@gridGutterWidth/@gridRowWidth);
+
+// 1200px min
+.fluidGridColumnWidth1200 { .info(@fluidGridColumnWidth1200); }	//  percentage(@gridColumnWidth1200/@gridRowWidth1200);
+.fluidGridGutterWidth1200 { .info(@fluidGridGutterWidth1200); }	//  percentage(@gridGutterWidth1200/@gridRowWidth1200);
+
+// 768px-979px
+.fluidGridColumnWidth768 { .info(@fluidGridColumnWidth768); }	//   percentage(@gridColumnWidth768/@gridRowWidth768);
+.fluidGridGutterWidth768 { .info(@fluidGridGutterWidth768); }	//   percentage(@gridGutterWidth768/@gridRowWidth768);
+
+
+//  ===========================================================================
+//  Couleurs d'origine dans le fichier variables.less fourni avec BT
+//  ===========================================================================
+
+.bt-black { .bt-info( #000 ); }
+.bt-grayDarker { .bt-info( #222 ); }
+.bt-grayDark { .bt-info( #333 ); }
+.bt-gray { .bt-info( #555 ); }
+.bt-grayLight { .bt-info( #999 ); }
+.bt-grayLighter { .bt-info( #eee ); }
+.bt-white { .bt-info( #fff ); }
+.bt-blue { .bt-info( #049cdb ); }
+.bt-blueDark { .bt-info( #0064cd ); }
+.bt-green { .bt-info( #46a546 ); }
+.bt-red { .bt-info( #9d261d ); }
+.bt-yellow { .bt-info( #ffc40d ); }
+.bt-orange { .bt-info( #f89406 ); }
+.bt-pink { .bt-info( #c3325f ); }
+.bt-purple { .bt-info( #7a43b6 ); }
+.bt-bodyBackground { .bt-info( #ffffff ); }
+.bt-textColor { .bt-info( #333333 ); }
+.bt-linkColor { .bt-info( #08c ); }
+.bt-linkColorHover { .bt-info( #005580 ); }
+.bt-tableBackground { .bt-info( transparent ); }
+.bt-tableBackgroundAccent { .bt-info( #f9f9f9 ); }
+.bt-tableBackgroundHover { .bt-info( #f5f5f5 ); }
+.bt-tableBorder { .bt-info( #ddd ); }
+.bt-btnBackground { .bt-info( #ffffff ); }
+.bt-btnBackgroundHighlight { .bt-info( #e6e6e6 ); }
+.bt-btnBorder { .bt-info( #bbb ); }
+.bt-btnPrimaryBackground { .bt-info( #0088cc ); }
+.bt-btnPrimaryBackgroundHighlight { .bt-info( #0044cc ); }
+.bt-btnInfoBackground { .bt-info( #5bc0de ); }
+.bt-btnInfoBackgroundHighlight { .bt-info( #2f96b4 ); }
+.bt-btnSuccessBackground { .bt-info( #62c462 ); }
+.bt-btnSuccessBackgroundHighlight { .bt-info( #51a351 ); }
+.bt-btnWarningBackground { .bt-info( #fbb450 ); }
+.bt-btnWarningBackgroundHighlight { .bt-info( #f89406 ); }
+.bt-btnDangerBackground { .bt-info( #ee5f5b ); }
+.bt-btnDangerBackgroundHighlight { .bt-info( #bd362f ); }
+.bt-btnInverseBackground { .bt-info( #444 ); }
+.bt-btnInverseBackgroundHighlight { .bt-info( #222222 ); }
+.bt-inputBackground { .bt-info( #ffffff ); }
+.bt-inputBorder { .bt-info( #ccc ); }
+.bt-inputDisabledBackground { .bt-info( #eeeeee ); }
+.bt-formActionsBackground { .bt-info( #f5f5f5 ); }
+.bt-dropdownBackground { .bt-info( #ffffff ); }
+.bt-dropdownBorder { .bt-info( rgba(0, 0, 0, 0.2) ); }
+.bt-dropdownDividerTop { .bt-info( #e5e5e5 ); }
+.bt-dropdownDividerBottom { .bt-info( #ffffff ); }
+.bt-dropdownLinkColor { .bt-info( #333333 ); }
+.bt-dropdownLinkColorHover { .bt-info( #ffffff ); }
+.bt-dropdownLinkBackgroundHover { .bt-info( #0088cc ); }
+.bt-dropdownLinkColorActive { .bt-info( #333333 ); }
+.bt-dropdownLinkBackgroundActive { .bt-info( #0088cc ); }
+.bt-placeholderText { .bt-info( #999999 ); }
+.bt-hrBorder { .bt-info( #eeeeee ); }
+.bt-wellBackground { .bt-info( #f5f5f5 ); }
+.bt-navbarBackground { .bt-info( #f2f2f2 ); }
+.bt-navbarBackgroundHighlight { .bt-info( #ffffff ); }
+.bt-navbarBorder { .bt-info( #d4d4d4 ); }
+.bt-navbarText { .bt-info( #555555 ); }
+.bt-navbarLinkColor { .bt-info( #555555 ); }
+.bt-navbarLinkColorHover { .bt-info( #333333 ); }
+.bt-navbarLinkColorActive { .bt-info( #555555 ); }
+.bt-navbarLinkBackgroundHover { .bt-info( transparent ); }
+.bt-navbarLinkBackgroundActive { .bt-info( #e5e5e5 ); }
+.bt-navbarBrandColor { .bt-info( #555555 ); }
+.bt-navbarInverseBackground { .bt-info( #111111 ); }
+.bt-navbarInverseBackgroundHighlight { .bt-info( #222222 ); }
+.bt-navbarInverseBorder { .bt-info( #252525 ); }
+.bt-navbarInverseText { .bt-info( #999999 ); }
+.bt-navbarInverseLinkColor { .bt-info( #999999 ); }
+.bt-navbarInverseLinkColorHover { .bt-info( #ffffff ); }
+.bt-navbarInverseLinkColorActive { .bt-info( #ffffff ); }
+.bt-navbarInverseLinkBackgroundHover { .bt-info( transparent ); }
+.bt-navbarInverseLinkBackgroundActive { .bt-info( #111111 ); }
+.bt-navbarInverseSearchBackground { .bt-info( #515151 ); }
+.bt-navbarInverseSearchBackgroundFocus { .bt-info( #ffffff ); }
+.bt-navbarInverseSearchBorder { .bt-info( #111111 ); }
+.bt-navbarInverseSearchPlaceholderColor { .bt-info( #ccc ); }
+.bt-navbarInverseBrandColor { .bt-info( #999999 ); }
+.bt-paginationBackground { .bt-info( #fff ); }
+.bt-paginationBorder { .bt-info( #ddd ); }
+.bt-paginationActiveBackground { .bt-info( #f5f5f5 ); }
+.bt-heroUnitBackground { .bt-info( #eeeeee ); }
+.bt-warningText { .bt-info( #c09853 ); }
+.bt-warningBackground { .bt-info( #fcf8e3 ); }
+.bt-warningBorder { .bt-info( #fbeed5 ); }
+.bt-errorText { .bt-info( #b94a48 ); }
+.bt-errorBackground { .bt-info( #f2dede ); }
+.bt-errorBorder { .bt-info( #eed3d7 ); }
+.bt-successText { .bt-info( #468847 ); }
+.bt-successBackground { .bt-info( #dff0d8 ); }
+.bt-successBorder { .bt-info( #d6e9c6 ); }
+.bt-infoText { .bt-info( #3a87ad ); }
+.bt-infoBackground { .bt-info( #d9edf7 ); }
+.bt-infoBorder { .bt-info( #bce8f1 ); }
+.bt-tooltipColor { .bt-info( #fff ); }
+.bt-tooltipBackground { .bt-info( #000 ); }
+.bt-tooltipArrowColor { .bt-info( #000000 ); }
+.bt-popoverBackground { .bt-info( #fff ); }
+.bt-popoverArrowColor { .bt-info( #fff ); }
+.bt-popoverTitleBackground { .bt-info( #f7f7f7 ); }
+.bt-popoverArrowOuterColor { .bt-info( rgba(0, 0, 0, 0.25) ); }
+

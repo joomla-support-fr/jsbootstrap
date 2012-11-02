@@ -11,6 +11,9 @@ defined('_JEXEC') or die;
 
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 ?>
+
+<div class="badge badge-success">com_content\archive\default.php</div>
+
 <div class="archive<?php echo $this->pageclass_sfx;?>">
 <?php if ($this->params->get('show_page_heading', 1)) : ?>
 <div class="page-header">

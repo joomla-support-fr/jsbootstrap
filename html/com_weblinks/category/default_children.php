@@ -12,6 +12,8 @@ $class = ' class="first"';
 if (count($this->children[$this->category->id]) > 0 && $this->maxLevel != 0) :
 ?>
 
+<div class="badge badge-success">com_weblinks\category\default_children.php</div>
+
 <ul class="unstyled">
 	<?php foreach($this->children[$this->category->id] as $id => $child) : ?>
 	<?php

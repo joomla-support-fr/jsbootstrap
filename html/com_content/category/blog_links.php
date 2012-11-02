@@ -10,6 +10,7 @@
 defined('_JEXEC') or die;
 ?>
 
+<div class="badge badge-success">com_content\category\blog_link.php</div>
 
 <div class="items-more">
 <ul class="nav nav-tabs nav-stacked">

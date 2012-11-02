@@ -42,8 +42,12 @@
     }
     .navbar > .navbar-fixed-bottom {position:fixed;}
 }
+
 // Pour nom du site, line-height = font-size (défini à 20px dans navbar.less)
 .navbar .brand {line-height:20px;}
+
+// application progressive de la couleur des liens au survol souris
+.navbar a { .transition(color 1s); }
 
 // suppression marge fixée par tb-responsive
 // en mode phone, elle est déplacée en top
@@ -63,7 +67,7 @@
 // --------------------------------------------------------------------------------
 
 .wrapper-body {margin-top: 10px; margin-bottom: 10px}  // marge haut/bas par défaut
-.withtop {margin-top: (@navbarHeight+10px)}  // marge haut si navbar
+.withtop {margin-top: (@navbarHeight+10px)}  	// marge haut si navbar
 .withbottom {margin-bottom: (@navbarHeight+10px)}  // marge bas si footer-fixed
 
 .wrapper-page { width: 980px; margin:0 auto; }
@@ -140,24 +144,3 @@
 
 // Centrer le contenu par défaut
 .footer, .footer-page, .footer-body {text-align:center}
-
-// --------------------------------------------------------------------------------
-//                        COMPOSANT DE BASE JOOMLA
-// --------------------------------------------------------------------------------
-
-// ====== com_content 
-.article-info {
-    margin-top: -20px;  // compenser la marge du titre
-    border-bottom: 1px solid @hrBorder; 
-    padding-bottom:5px;
-    margin-bottom:10px;}
-// pas de colonne droite en mode 2 ou 3 colonnes pour les infos articles
-.cols-2 [class*="column"] [class*="span"], 
-.cols-3 [class*="column"] [class*="span"] { 
-    float:none; width:auto; display:block; text-align:left !important;
-}
-.cols-2 .align-right, 
-.cols-3 .align-right { 
-    text-align:left 
-}
-.items-more {margin-top:10px}

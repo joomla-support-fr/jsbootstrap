@@ -26,7 +26,8 @@
 @import "bootstrap/tables.less";
 
 // Components: common
-@import "bootstrap/sprites.less";
+// @import "bootstrap/sprites.less";    // remplacer par FontAwesome
+@import "jsb/font-awesome.less";        // icones vectorielles. remplace sprite.less
 @import "bootstrap/dropdowns.less";
 @import "bootstrap/wells.less";
 @import "bootstrap/component-animations.less";
@@ -36,7 +37,6 @@
 @import "bootstrap/buttons.less";
 @import "bootstrap/button-groups.less";
 @import "bootstrap/alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
-// @import "jsb/jsb-alerts.less";     // uniformise couleurs avec badge et label
 
 // Components: Nav
 @import "bootstrap/navs.less";
@@ -82,7 +82,9 @@
 // ===============================================
 
 @import "jsb/jsb-position.less";  		// gestion des positions du template
+@import "jsb/jsb-html.less";  		    // css pour les surcharges html
 @import "jsb/jsb-edition.less";   		// classes utiles pour la rédaction articles et modules 
+@import "jsb/jsb-box-icon.less";       	// pavé texte avec icone
 @import "jsb/jsb-extended-menu.less";   // reprise TB pour gestion menu : a revoir !!!
 
 // ===============================================
@@ -94,8 +96,3 @@
 // @import "extensions/jsb-aiContactSafe.less"; 
 // @import "extensions/jsb-gTranslate.less"; 
 // @import "extensions/jsb-rokQuickCart.less"; 
-
-// ===============================================
-// Personnalisation du template par l'utilisateur
-// ===============================================
- @import "custom.less";  // adaptation pour JSBootstrap

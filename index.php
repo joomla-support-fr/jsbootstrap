@@ -47,6 +47,7 @@ if($this->countModules('user-top-2')) { $nb_bloc += 1;}
 if($this->countModules('user-top-3')) { $nb_bloc += 1;}
 if($this->countModules('user-top-4')) { $nb_bloc += 1;}
 $span_usertop = ($nb_bloc > 0 ? (12 / $nb_bloc) : 0); 
+$js_usertop = ($nb_bloc > 1);
 // largeur des blocs userbottom
 $nb_bloc = 0;
 if($this->countModules('user-bottom-1')) { $nb_bloc += 1;}
@@ -54,6 +55,7 @@ if($this->countModules('user-bottom-2')) { $nb_bloc += 1;}
 if($this->countModules('user-bottom-3')) { $nb_bloc += 1;}
 if($this->countModules('user-bottom-4')) { $nb_bloc += 1;}
 $span_userbottom = ($nb_bloc > 0 ? (12 / $nb_bloc) : 0); 
+$js_userbottom = ($nb_bloc > 1); 
 
 ?>
 <!DOCTYPE html>
@@ -90,6 +92,11 @@ $span_userbottom = ($nb_bloc > 0 ? (12 / $nb_bloc) : 0);
 	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/ico/apple-touch-icon-114x114.png" />
 	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/ico/apple-touch-icon-72x72.png" />
 	<link rel="apple-touch-icon" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/ico/apple-touch-icon-57x57.png /">
+
+	<?php if ($js_usertop || $js_userbottom) : ?>	
+	<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/equalheights.js"></script> 
+	<?php endif; ?>
+
 </head>
 
 <body class="<?php echo $sitehome . $option . " view-" . $view . " layout-" . $layout . " task-" . $task . " itemid-" . $itemid . " " . "grid" . $gridfluid ;?> ">
@@ -200,7 +207,7 @@ $span_userbottom = ($nb_bloc > 0 ? (12 / $nb_bloc) : 0);
 
 			<?php // breadcrumb-top : fil d'ariane sur la largeur des contenus  ?>
 			<?php if($this->countModules('breadcrumb-top')) : ?>
-				<div class="breadcrumb-top"<?php echo $this->params->get('class-breadcrumb-top')?>>
+				<div class="breadcrumb-top <?php echo $this->params->get('class-breadcrumb-top')?>">
 					<jdoc:include type="modules" name="breadcrumb-top" style="none" />
 				</div>
 			<?php endif; ?>
@@ -210,33 +217,33 @@ $span_userbottom = ($nb_bloc > 0 ? (12 / $nb_bloc) : 0);
 			
 				<?php // user-top : 1 à 4 blocs justifiés sur la largeur grille ?>
 				<?php if ($span_usertop>0) : ?>
-					<div class="wrapper-usertop<?php echo $this->params->get('class-wrapper-user-top') ?>"> 
-						<div class="row<?php echo $gridfluid; ?>">
+					<div class="wrapper-user-top<?php echo $this->params->get('class-wrapper-user-top') ?>"> 
+						<div class="row-fluid">
 							<?php if($this->countModules('user-top-1')) : ?>
 								<div class="span<?php echo $span_usertop; ?>"> 
 								<div class="user-top-1<?php echo $this->params->get('class-user-top') ?>">
-									<jdoc:include type="modules" name="user-top-1" style="xhtml" />
+									<jdoc:include type="modules" name="user-top-1" style="JSBusertop" />
 								</div>
 								</div>
 							<?php endif; // user-top-1 ?>
 							<?php if($this->countModules('user-top-2')) : ?>
 								<div class="span<?php echo $span_usertop; ?>"> 
 								<div class="user-top-2<?php echo $this->params->get('class-user-top') ?>">
-									<jdoc:include type="modules" name="user-top-2" style="xhtml" />
+									<jdoc:include type="modules" name="user-top-2" style="JSBusertop" />
 								</div>
 								</div>
 							<?php endif; // user-top-2 ?>
 							<?php if($this->countModules('user-top-3')) : ?>
 								<div class="span<?php echo $span_usertop; ?>"> 
 								<div class="user-top-3<?php echo $this->params->get('class-user-top') ?>">
-									<jdoc:include type="modules" name="user-top-3" style="xhtml" />
+									<jdoc:include type="modules" name="user-top-3" style="JSBusertop" />
 								</div>
 								</div>
 							<?php endif; // user-top-3 ?>
 							<?php if($this->countModules('user-top-4')) : ?>
 								<div class="span<?php echo $span_usertop; ?>"> 
 								<div class="user-top-4<?php echo $this->params->get('class-user-top') ?>">
-									<jdoc:include type="modules" name="user-top-4" style="xhtml" />
+									<jdoc:include type="modules" name="user-top-4" style="JSBusertop" />
 								</div>
 								</div>
 							<?php endif; // user-top-4 ?>
@@ -246,7 +253,7 @@ $span_userbottom = ($nb_bloc > 0 ? (12 / $nb_bloc) : 0);
 				
 				<?php // ====== la partie centrale du contenu ====== ?>
 				<div class="wrapper-middle<?php echo $this->params->get('class-wrapper-middle')?>">
-					<div class="row<?php echo $gridfluid; ?>">
+					<div class="row-fluid"> 
 
 						<?php // Colonne de gauche
 						if($this->countModules('sidebar-left')) : ?>
@@ -258,40 +265,40 @@ $span_userbottom = ($nb_bloc > 0 ? (12 / $nb_bloc) : 0);
 						<?php endif;  // Colonne de gauche ?>
 
 						<?php // Colonne centrale ?>
-						<div class="wrapper-middle-content<?php echo $this->params->get('class-wrapper-middle-content')?>">
-							<div class="span<?php echo $span_content; ?>">
-							<?php // < div class="container-fluid "> est-ce nécessaire ??>
-									<?php // module au-dessus du contenu
-									if($this->countModules('content-top')) : ?>
-										<div class="row-fluid"> 
-											<div class="span12"> 
-												<div class="content-top<?php echo $this->params->get('class-content-top')?>">
-													<jdoc:include type="modules" name="content-top" style="none" />
-												</div>
-											</div>
-										</div>
-									<?php endif; // module au-dessus du contenu ?>
+						<div class="span<?php echo $span_content; ?>">
+							<div class="wrapper-middle-content<?php echo $this->params->get('class-wrapper-middle-content')?>">
 
-									<?php // partie réservée aux articles et composants ?>
+								<?php // module au-dessus du contenu
+								if($this->countModules('content-top')) : ?>
 									<div class="row-fluid"> 
 										<div class="span12"> 
-											<div class="component<?php echo $this->params->get('class-component')?>">
-												<jdoc:include type="message" />
-												<jdoc:include type="component" />
+											<div class="content-top<?php echo $this->params->get('class-content-top')?>">
+												<jdoc:include type="modules" name="content-top" style="none" />
 											</div>
 										</div>
 									</div>
-									
-									<?php // module au-dessous du contenu
-									if($this->countModules('content-bottom')) : ?>
-										<div class="row-fluid"> 
-											<div class="span12"> 
-												<div class="content-bottom<?php echo $this->params->get('class-content-bottom')?>">
-													<jdoc:include type="modules" name="content-bottom" style="none" />
-												</div>
+								<?php endif; // module au-dessus du contenu ?>
+
+								<?php // partie réservée aux articles et composants ?>
+								<div class="row-fluid contenu"> 
+									<div class="span12"> 
+										<div class="component<?php echo $this->params->get('class-component')?>">
+											<jdoc:include type="message" />
+											<jdoc:include type="component" />
+										</div>
+									</div>
+								</div>
+								
+								<?php // module au-dessous du contenu
+								if($this->countModules('content-bottom')) : ?>
+									<div class="row-fluid asideright"> 
+										<div class="span12"> 
+											<div class="content-bottom<?php echo $this->params->get('class-content-bottom')?>">
+												<jdoc:include type="modules" name="content-bottom" style="none" />
 											</div>
 										</div>
-									<?php endif;  // module au-dessous du contenu ?>
+									</div>
+								<?php endif;  // module au-dessous du contenu ?>
 									
 							</div> <?php // .span colonne centrale ?>
 						</div> <?php // #wrapper-middle-content ?>
@@ -311,33 +318,33 @@ $span_userbottom = ($nb_bloc > 0 ? (12 / $nb_bloc) : 0);
 				
 				<?php // user-bottom : 1 à 4 blocs justifiés sur la largeur grille
 				if ($span_userbottom>0) : ?>
-					<div class="wrapper-userbottom<?php echo $this->params->get('class-wrapper-user-bottom')?>"> 
-						<div class="row<?php echo $gridfluid; ?>">
+					<div class="wrapper-user-bottom<?php echo $this->params->get('class-wrapper-user-bottom')?>"> 
+						<div class="row-fluid">
 							<?php if($this->countModules('user-bottom-1')) : ?>
-								<div class="span<?php echo $span_userbottom; ?>"> 
-									<div class="user-bottom-1<?php echo $this->params->get('class-user-bottom')?>">
-										<jdoc:include type="modules" name="user-bottom-1" style="none" />
+								<div class="span<?php echo $span_userbottom ?>"> 
+									<div class="user-bottom-1<?php echo $this->params->get('class-user-bottom'); ?>">
+										<jdoc:include type="modules" name="user-bottom-1" style="JSBuserbottom" />
 									</div>
 								</div>
 							<?php endif; // user-bottom-1 ?>
 							<?php if($this->countModules('user-bottom-2')) : ?>
-								<div class="span<?php echo $span_userbottom; ?>"> 
-									<div class="user-bottom-2<?php echo $this->params->get('class-user-bottom')?>">
-										<jdoc:include type="modules" name="user-bottom-2" style="none" />
+								<div class="span<?php echo $span_userbottom ?>"> 
+									<div class="user-bottom-2<?php echo $this->params->get('class-user-bottom'); ?>">
+										<jdoc:include type="modules" name="user-bottom-2" style="JSBuserbottom" />
 									</div>
 								</div>
 							<?php endif; // user-bottom-2 ?>
 							<?php if($this->countModules('user-bottom-3')) : ?>
-								<div class="span<?php echo $span_userbottom; ?>"> 
-									<div class="user-bottom-3<?php echo $this->params->get('class-user-bottom')?>">
-										<jdoc:include type="modules" name="user-bottom-3" style="none" />
+								<div class="span<?php echo $span_userbottom ?>"> 
+									<div class="user-bottom-3<?php echo $this->params->get('class-user-bottom'); ?>">
+										<jdoc:include type="modules" name="user-bottom-3" style="JSBuserbottom" />
 									</div>
 								</div>
 							<?php endif; // user-bottom-3 ?>
 							<?php if($this->countModules('user-bottom-4')) : ?>
 								<div class="span<?php echo $span_userbottom; ?>"> 
-									<div class="user-bottom-4<?php echo $this->params->get('class-user-bottom')?>">
-										<jdoc:include type="modules" name="user-bottom-4" style="none" />
+									<div class="user-bottom-4<?php echo $this->params->get('class-user-bottom'); ?>">
+										<jdoc:include type="modules" name="user-bottom-4" style="JSBuserbottom" />
 									</div>
 								</div>
 							<?php endif; // user-bottom-4 ?>
@@ -347,7 +354,7 @@ $span_userbottom = ($nb_bloc > 0 ? (12 / $nb_bloc) : 0);
 
 				<?php // breadcrumb-bottom : fil d'ariane sur la largeur des contenus 
 				if($this->countModules('breadcrumb-bottom')) : ?>
-					<div class="breadcrumb-bottom"<?php echo $this->params->get('class-breadcrumb-bottom')?>>
+					<div class="breadcrumb-bottom<?php echo $this->params->get('class-breadcrumb-bottom')?>">
 						<jdoc:include type="modules" name="breadcrumb-bottom" style="none" />
 					</div>
 				<?php endif; // breadcrumb-bottom ?>
@@ -397,5 +404,21 @@ $span_userbottom = ($nb_bloc > 0 ? (12 / $nb_bloc) : 0);
 
 	<jdoc:include type="modules" name="debug" />
 
+	<?php if ($js_usertop) : ?>	
+		<script type="text/javascript" charset="utf-8">
+			window.addEvent('domready',function() {
+			var columinator = new Equalizer('.jsb-usertop').equalize('height');
+			});
+		</script>
+	<?php endif; ?>
+	
+	<?php if ($js_userbottom) : ?>	
+		<script type="text/javascript" charset="utf-8">
+			window.addEvent('domready',function() {
+			var columinator = new Equalizer('.jsb-userbottom').equalize('height');
+			});
+		</script>
+	<?php endif; ?>
+	
 </body>
 </html>

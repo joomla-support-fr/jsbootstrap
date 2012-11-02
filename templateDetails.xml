@@ -53,7 +53,7 @@
 	</positions>
 
 	<languages folder="language">
-		<language tag="fr-FR">fr-FR/fr-FR.tpl_JSBootstrap.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.tpl_jsbootstrap.ini</language>
 	</languages>
 
 	<config>

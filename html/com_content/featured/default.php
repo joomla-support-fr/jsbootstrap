@@ -18,6 +18,9 @@ JHtml::_('behavior.caption');
 // If the page class is defined, add to class as suffix.
 // It will be a separate class if the user starts it with a space
 ?>
+
+<!-- debut com_content\featured\default.php -->
+
 <div class="blog-featured<?php echo $this->pageclass_sfx;?>">
 <?php if ($this->params->get('show_page_heading') != 0) : ?>
 <div class="page-header">
@@ -91,3 +94,4 @@ JHtml::_('behavior.caption');
 	<?php endif; ?>
 
 </div>
+<!-- fin com_content\featured\default.php -->

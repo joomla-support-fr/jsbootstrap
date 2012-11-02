@@ -1,0 +1,865 @@
+<!DOCTYPE HTML>
+<html lang="fr-FR">
+<head>
+	<meta charset="UTF-8">
+	<title>Infos sur variables.less</title>
+	<link rel="stylesheet" href="css/info-variables.css" type="text/css" />
+	<style type="text/css">
+	body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+	td, th { 
+		border: 1px solid #999;
+		padding: 4px;
+	}
+	td:first-child {width:33%;}
+	td:last-child {width:100%;}
+	.subtitle {
+		font-weight:bolder;
+		color:#ddd;
+		background-color: #555;
+		padding:10px;
+	}
+	</style>
+</head>
+<body>
+<p>
+La table ci-dessous affiche la valeur des variables présentes dans le fichier "variables.less"</p>
+<ul>
+<li>colonne 1 : la variable et sa valeur actuelle</li>
+<li>colonne 2 : la couleur dans le ficher d'origine de Bootstrap (pour info) </li>
+<li>colonne 3 : valeur d'origine et commentaires</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>Valeur actuelle</th>
+	<th>origine</th>
+	<th>Commentaires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td class="subtitle" colspan="3">Grays</td>
+</tr>
+<tr>
+	<td class="black">@black</td>
+	<td class="bt-black"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="grayDarker">@grayDarker</td>
+	<td class="bt-grayDarker"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="grayDark">@grayDark</td>
+	<td class="bt-grayDark"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="gray">@gray</td>
+	<td class="bt-gray"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="grayLight">@grayLight</td>
+	<td class="bt-grayLight"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="grayLighter">@grayLighter</td>
+	<td class="bt-grayLighter"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="white">@white</td>
+	<td class="bt-white"></td>
+	<td></td>
+</tr>
+
+
+<tr>
+	<td class="subtitle" colspan="3">Accent colors</td>
+</tr>
+<tr>
+	<td class="blue">@blue</td>
+	<td class="bt-blue"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="blueDark">@blueDark</td>
+	<td class="bt-blueDark"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="green">@green</td>
+	<td class="bt-green"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="red">@red</td>
+	<td class="bt-red"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="yellow">@yellow</td>
+	<td class="bt-yellow"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="orange">@orange</td>
+	<td class="bt-orange"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="pink">@pink</td>
+	<td class="bt-pink"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="purple">@purple</td>
+	<td class="bt-purple"></td>
+	<td></td>
+</tr>
+
+
+<tr>
+	<td class="subtitle" colspan="3">Scaffolding</td>
+</tr>
+<tr>
+	<td class="bodyBackground">@bodyBackground</td>
+	<td class="bt-bodyBackground"></td>
+	<td>@white</td>
+</tr>
+<tr>
+	<td class="textColor">@textColor</td>
+	<td class="bt-textColor"></td>
+	<td>@grayDark</td>
+</tr>
+
+
+<tr>
+	<td class="subtitle" colspan="3">Links</td>
+</tr>
+<tr>
+	<td class="linkColor">@linkColor</td>
+	<td class="bt-linkColor"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="linkColorHover">@linkColorHover</td>
+	<td class="bt-linkColorHover"></td>
+	<td>darken(@linkColor, 15%)</td>
+</tr>
+
+
+<tr>
+	<td class="subtitle" colspan="3">Typography</td>
+</tr>
+<tr>
+	<td colspan="2" class="sansFontFamily">@sansFontFamily</td>
+	<td>"Helvetica Neue", Helvetica, Arial, sans-serif</td>
+</tr>
+<tr>
+	<td colspan="2" class="serifFontFamily">@serifFontFamily</td>
+	<td>Georgia, "Times New Roman", Times, serif</td>
+</tr>
+<tr>
+	<td colspan="2" class="monoFontFamily">@monoFontFamily</td>
+	<td>Monaco, Menlo, Consolas, "Courier New", monospace</td>
+</tr>
+
+<tr>
+	<td colspan="2" class="baseFontSize">@baseFontSize</td>
+	<td>14px</td>
+</tr>
+<tr>
+	<td colspan="2" class="baseFontFamily">@baseFontFamily</td>
+	<td>@sansFontFamily</td>
+</tr>
+<tr>
+	<td colspan="2" class="baseLineHeight">@baseLineHeight</td>
+	<td>20px</td>
+</tr>
+<tr>
+	<td colspan="2" class="altFontFamily">@altFontFamily</td>
+	<td>@serifFontFamily</td>
+</tr>
+
+<tr>
+	<td colspan="2" class="headingsFontFamily">@headingsFontFamily</td>
+	<td>inherit; // empty to use BS default, @baseFontFamily
+<tr>
+	<td colspan="2" class="headingsFontWeight">@headingsFontWeight</td>
+	<td>bold;	// instead of browser default, bold
+<tr>
+	<td class="headingsColor">@headingsColor</td>
+	<td class="bt-headingsColor"></td>
+	<td>inherit; // empty to use BS default, @textColor
+
+
+<tr>
+	<td class="subtitle" colspan="3">Tables</td>
+</tr>
+<tr>
+	<td class="tableBackground">@tableBackground</td>
+	<td class="bt-tableBackground"></td>
+	<td>transparent; overall background-color</td>
+<tr>
+	<td class="tableBackgroundAccent">@tableBackgroundAccent</td>
+	<td class="bt-tableBackgroundAccent"></td>
+	<td>for striping</td>
+<tr>
+	<td class="tableBackgroundHover">@tableBackgroundHover</td>
+	<td class="bt-tableBackgroundHover"></td>
+	<td>pour hover</td>
+<tr>
+	<td class="tableBorder">@tableBorder</td>
+	<td class="bt-tableBorder"></td>
+	<td>bordure table et cellule</td>
+
+
+<tr>
+	<td class="subtitle" colspan="3">Buttons</td>
+</tr>
+<tr>
+	<td class="btnBackground">@btnBackground</td>
+	<td class="bt-btnBackground"></td>
+	<td>@white</td>
+</tr>
+<tr>
+	<td class="btnBackgroundHighlight">@btnBackgroundHighlight</td>
+	<td class="bt-btnBackgroundHighlight"></td>
+	<td>darken(@white, 10%)</td>
+</tr>
+<tr>
+	<td class="btnBorder">@btnBorder</td>
+	<td class="bt-btnBorder"></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td class="btnPrimaryBackground">@btnPrimaryBackground</td>
+	<td class="bt-btnPrimaryBackground"></td>
+	<td>@linkColor</td>
+</tr>
+<tr>
+	<td class="btnPrimaryBackgroundHighlight">@btnPrimaryBackgroundHighlight</td>
+	<td class="bt-btnPrimaryBackgroundHighlight"></td>
+	<td>spin(@btnPrimaryBackground, 20%)</td>
+</tr>
+
+<tr>
+	<td class="btnInfoBackground">@btnInfoBackground</td>
+	<td class="bt-btnInfoBackground"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="btnInfoBackgroundHighlight">@btnInfoBackgroundHighlight</td>
+	<td class="bt-btnInfoBackgroundHighlight"></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td class="btnSuccessBackground">@btnSuccessBackground</td>
+	<td class="bt-btnSuccessBackground"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="btnSuccessBackgroundHighlight">@btnSuccessBackgroundHighlight</td>
+	<td class="bt-btnSuccessBackgroundHighlight"></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td class="btnWarningBackground">@btnWarningBackground</td>
+	<td class="bt-btnWarningBackground"></td>
+	<td>lighten(@orange, 15%)</td>
+</tr>
+<tr>
+	<td class="btnWarningBackgroundHighlight">@btnWarningBackgroundHighlight</td>
+	<td class="bt-btnWarningBackgroundHighlight"></td>
+	<td>@orange</td>
+</tr>
+
+<tr>
+	<td class="btnDangerBackground">@btnDangerBackground</td>
+	<td class="bt-btnDangerBackground"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="btnDangerBackgroundHighlight">@btnDangerBackgroundHighlight</td>
+	<td class="bt-btnDangerBackgroundHighlight"></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td class="btnInverseBackground">@btnInverseBackground</td>
+	<td class="bt-btnInverseBackground"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="btnInverseBackgroundHighlight">@btnInverseBackgroundHighlight</td>
+	<td class="bt-btnInverseBackgroundHighlight"></td>
+	<td>@grayDarker</td>
+</tr>
+
+
+<tr>
+	<td class="subtitle" colspan="3">Forms</td>
+</tr>
+<tr>
+	<td class="inputBackground">@inputBackground</td>
+	<td class="bt-inputBackground"></td>
+	<td>@white</td>
+</tr>
+<tr>
+	<td class="inputBorder">@inputBorder</td>
+	<td class="bt-inputBorder"></td>
+	<td></td>
+</tr>
+<tr>
+	<td colspan="2" class="inputBorderRadius">@inputBorderRadius</td>
+	<td>3px</td>
+</tr>
+<tr>
+	<td class="inputDisabledBackground">@inputDisabledBackground</td>
+	<td class="bt-inputDisabledBackground"></td>
+	<td>@grayLighter</td>
+</tr>
+<tr>
+	<td class="formActionsBackground">@formActionsBackground</td>
+	<td class="bt-formActionsBackground"></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td class="subtitle" colspan="3">Dropdowns</td>
+</tr>
+<tr>
+	<td class="dropdownBackground">@dropdownBackground</td>
+	<td class="bt-dropdownBackground"></td>
+	<td>@white - <b>couleur de fond des menus déroulants</b></td>
+</tr>
+<tr>
+	<td class="dropdownBorder">@dropdownBorder</td>
+	<td class="bt-dropdownBorder"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="dropdownDividerTop">@dropdownDividerTop</td>
+	<td class="bt-dropdownDividerTop"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="dropdownDividerBottom">@dropdownDividerBottom</td>
+	<td class="bt-dropdownDividerBottom"></td>
+	<td>@white</td>
+</tr>
+
+<tr>
+	<td class="dropdownLinkColor">@dropdownLinkColor</td>
+	<td class="bt-dropdownLinkColor"></td>
+	<td>@grayDark</td>
+</tr>
+
+<tr>
+	<td class="dropdownLinkColorHover">@dropdownLinkColorHover</td>
+	<td class="bt-dropdownLinkColorHover"></td>
+	<td>@white</td>
+</tr>
+<tr>
+	<td class="dropdownLinkBackgroundHover">@dropdownLinkBackgroundHover</td>
+	<td class="bt-dropdownLinkBackgroundHover"></td>
+	<td>@dropdownLinkBackgroundActive</td>
+</tr>
+
+<tr>
+	<td class="dropdownLinkColorActive">@dropdownLinkColorActive</td>
+	<td class="bt-dropdownLinkColorActive"></td>
+	<td>@dropdownLinkColor</td>
+</tr>
+<tr>
+	<td class="dropdownLinkBackgroundActive">@dropdownLinkBackgroundActive</td>
+	<td class="bt-dropdownLinkBackgroundActive"></td>
+	<td>@linkColor</td>
+</tr>
+
+<tr>
+	<td class="subtitle" colspan="3">COMPONENT VARIABLES</td>
+</tr>
+<tr>
+	<td colspan="3">Z-index master list is Used for a bird's eye view of components dependent on the z-axis<br />Try to avoid customizing these :)</td>
+</tr>
+<tr>
+	<td colspan="2" class="zindexDropdown">@zindexDropdown</td>
+	<td>1000</td>
+</tr>
+<tr>
+	<td colspan="2" class="zindexPopover">@zindexPopover</td>
+	<td>1010</td>
+</tr>
+<tr>
+	<td colspan="2" class="zindexTooltip">@zindexTooltip</td>
+	<td>1030</td>
+</tr>
+<tr>
+	<td colspan="2" class="zindexFixedNavbar">@zindexFixedNavbar</td>
+	<td>1030</td>
+</tr>
+<tr>
+	<td colspan="2" class="zindexModalBackdrop">@zindexModalBackdrop</td>
+	<td>1040</td>
+</tr>
+<tr>
+	<td colspan="2" class="zindexModal">@zindexModal</td>
+	<td>1050</td>
+</tr>
+
+
+<tr>
+	<td class="subtitle" colspan="3">Sprite icons path</td>
+</tr>
+<tr>
+	<td colspan="2" class="iconSpritePath">@iconSpritePath</td>
+	<td>"../images/glyphicons-halflings.png"</td>
+</tr>
+<tr>
+	<td colspan="2" class="iconWhiteSpritePath">@iconWhiteSpritePath</td>
+	<td>"../images/glyphicons-halflings-white.png"</td>
+</tr>
+
+
+<tr>
+	<td class="subtitle" colspan="3">Input placeholder text color</td>
+</tr>
+<tr>
+	<td class="placeholderText">@placeholderText</td>
+	<td class="bt-placeholderText"></td>
+	<td>@grayLight</td>
+</tr>
+
+
+<tr>
+	<td class="subtitle" colspan="3">Hr border color</td>
+</tr>
+<tr>
+	<td class="hrBorder">@hrBorder</td>
+	<td class="bt-hrBorder"></td>
+	<td>@grayLighter</td>
+</tr>
+
+
+<tr>
+	<td class="subtitle" colspan="3">Wells</td>
+</tr>
+<tr>
+	<td class="wellBackground">@wellBackground</td>
+	<td class="bt-wellBackground"></td>
+	<td></td>
+</tr>
+
+
+<tr>
+	<td class="subtitle" colspan="3">Navbar</td>
+</tr>
+<tr>
+	<td colspan="2" class="navbarCollapseWidth">@navbarCollapseWidth</td>
+	<td>979px - largeur au-dessous de laquelle le menu passe au mode smartphone</td>
+</tr>
+
+<tr>
+	<td colspan="2" class="navbarHeight">@navbarHeight</td>
+	<td>40px - hauteur de la navbar</td>
+</tr>
+<tr>
+	<td class="navbarBackground">@navbarBackground</td>
+	<td class="bt-navbarBackground"></td>
+	<td>darken(@navbarBackgroundHighlight, 5%)</td>
+</tr>
+<tr>
+	<td class="navbarBackgroundHighlight">@navbarBackgroundHighlight</td>
+	<td class="bt-navbarBackgroundHighlight"></td>
+	<td><b>couleur de base pour le calcul des couleurs de la navbar</b></td>
+</tr>
+<tr>
+	<td class="navbarBorder">@navbarBorder</td>
+	<td class="bt-navbarBorder"></td>
+	<td>darken(@navbarBackground, 12%)</td>
+</tr>
+
+<tr>
+	<td class="navbarText">@navbarText</td>
+	<td class="bt-navbarText"></td>
+	<td>@gray - couleur de base pour le texte de la navbar</td>
+</tr>
+<tr>
+	<td class="navbarLinkColor">@navbarLinkColor</td>
+	<td class="bt-navbarLinkColor"></td>
+	<td>@gray</td>
+</tr>
+<tr>
+	<td class="navbarLinkColorHover">@navbarLinkColorHover</td>
+	<td class="bt-navbarLinkColorHover"></td>
+	<td>@grayDark</td>
+</tr>
+<tr>
+	<td class="navbarLinkColorActive">@navbarLinkColorActive</td>
+	<td class="bt-navbarLinkColorActive"></td>
+	<td>@gray</td>
+</tr>
+<tr>
+	<td class="navbarLinkBackgroundHover">@navbarLinkBackgroundHover</td>
+	<td class="bt-navbarLinkBackgroundHover"></td>
+	<td>transparent</td>
+</tr>
+<tr>
+	<td class="navbarLinkBackgroundActive">@navbarLinkBackgroundActive</td>
+	<td class="bt-navbarLinkBackgroundActive"></td>
+	<td>darken(@navbarBackground, 5%)</td>
+</tr>
+
+<tr>
+	<td class="navbarBrandColor">@navbarBrandColor</td>
+	<td class="bt-navbarBrandColor"></td>
+	<td>@navbarLinkColor</td>
+</tr>
+
+<tr>
+	<td class="subtitle" colspan="3">Inverted navbar</td>
+</tr>
+<tr>
+	<td class="navbarInverseBackground">@navbarInverseBackground</td>
+	<td class="bt-navbarInverseBackground"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="navbarInverseBackgroundHighlight">@navbarInverseBackgroundHighlight</td>
+	<td class="bt-navbarInverseBackgroundHighlight"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="navbarInverseBorder">@navbarInverseBorder</td>
+	<td class="bt-navbarInverseBorder"></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td class="navbarInverseText">@navbarInverseText</td>
+	<td class="bt-navbarInverseText"></td>
+	<td>@grayLight</td>
+</tr>
+<tr>
+	<td class="navbarInverseLinkColor">@navbarInverseLinkColor</td>
+	<td class="bt-navbarInverseLinkColor"></td>
+	<td>@grayLight</td>
+</tr>
+<tr>
+	<td class="navbarInverseLinkColorHover">@navbarInverseLinkColorHover</td>
+	<td class="bt-navbarInverseLinkColorHover"></td>
+	<td>@white</td>
+</tr>
+<tr>
+	<td class="navbarInverseLinkColorActive">@navbarInverseLinkColorActive</td>
+	<td class="bt-navbarInverseLinkColorActive"></td>
+	<td>@navbarInverseLinkColorHover</td>
+</tr>
+<tr>
+	<td class="navbarInverseLinkBackgroundHover">@navbarInverseLinkBackgroundHover</td>
+	<td class="bt-navbarInverseLinkBackgroundHover"></td>
+	<td>transparent</td>
+</tr>
+<tr>
+	<td class="navbarInverseLinkBackgroundActive">@navbarInverseLinkBackgroundActive</td>
+	<td class="bt-navbarInverseLinkBackgroundActive"></td>
+	<td>@navbarInverseBackground</td>
+</tr>
+
+<tr>
+	<td class="navbarInverseSearchBackground">@navbarInverseSearchBackground</td>
+	<td class="bt-navbarInverseSearchBackground"></td>
+	<td>lighten(@navbarInverseBackground, 25%)</td>
+</tr>
+<tr>
+	<td class="navbarInverseSearchBackgroundFocus">@navbarInverseSearchBackgroundFocus</td>
+	<td class="bt-navbarInverseSearchBackgroundFocus"></td>
+	<td>@white</td>
+</tr>
+<tr>
+	<td class="navbarInverseSearchBorder">@navbarInverseSearchBorder</td>
+	<td class="bt-navbarInverseSearchBorder"></td>
+	<td>@navbarInverseBackground</td>
+</tr>
+<tr>
+	<td class="navbarInverseSearchPlaceholderColor">@navbarInverseSearchPlaceholderColor</td>
+	<td class="bt-navbarInverseSearchPlaceholderColor"></td>
+	<td></td>
+</tr>
+
+<tr>
+	<td class="navbarInverseBrandColor">@navbarInverseBrandColor</td>
+	<td class="bt-navbarInverseBrandColor"></td>
+	<td>@navbarInverseLinkColor</td>
+</tr>
+
+
+<tr>
+	<td class="subtitle" colspan="3">Pagination</td>
+</tr>
+<tr>
+	<td class="paginationBackground">@paginationBackground</td>
+	<td class="bt-paginationBackground"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="paginationBorder">@paginationBorder</td>
+	<td class="bt-paginationBorder"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="paginationActiveBackground">@paginationActiveBackground</td>
+	<td class="bt-paginationActiveBackground"></td>
+	<td></td>
+</tr>
+
+
+<tr>
+	<td class="subtitle" colspan="3">Hero unit</td>
+</tr>
+<tr>
+	<td class="heroUnitBackground">@heroUnitBackground</td>
+	<td class="bt-heroUnitBackground"></td>
+	<td>@grayLighter</td>
+</tr>
+<tr>
+	<td class="heroUnitHeadingColor">@heroUnitHeadingColor</td>
+	<td class="bt-heroUnitHeadingColor"></td>
+	<td>inherit</td>
+</tr>
+<tr>
+	<td class="heroUnitLeadColor">@heroUnitLeadColor</td>
+	<td class="bt-heroUnitLeadColor"></td>
+	<td>inherit</td>
+</tr>
+
+
+<tr>
+	<td class="subtitle" colspan="3">Form states and alerts</td>
+</tr>
+<tr>
+	<td class="warningText">@warningText</td>
+	<td class="bt-warningText"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="warningBackground">@warningBackground</td>
+	<td class="bt-warningBackground"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="warningBorder">@warningBorder</td>
+	<td class="bt-warningBorder"></td>
+	<td>darken(spin(@warningBackground, -10), 3%)</td>
+</tr>
+
+<tr>
+	<td class="errorText">@errorText</td>
+	<td class="bt-errorText"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="errorBackground">@errorBackground</td>
+	<td class="bt-errorBackground"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="errorBorder">@errorBorder</td>
+	<td class="bt-errorBorder"></td>
+	<td>darken(spin(@errorBackground, -10), 3%)</td>
+</tr>
+
+<tr>
+	<td class="successText">@successText</td>
+	<td class="bt-successText"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="successBackground">@successBackground</td>
+	<td class="bt-successBackground"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="successBorder">@successBorder</td>
+	<td class="bt-successBorder"></td>
+	<td>darken(spin(@successBackground, -10), 5%)</td>
+</tr>
+
+<tr>
+	<td class="infoText">@infoText</td>
+	<td class="bt-infoText"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="infoBackground">@infoBackground</td>
+	<td class="bt-infoBackground"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="infoBorder">@infoBorder</td>
+	<td class="bt-infoBorder"></td>
+	<td>darken(spin(@infoBackground, -10), 7%)</td>
+</tr>
+
+
+<tr>
+	<td class="subtitle" colspan="3">Tooltips and popovers</td>
+</tr>
+<tr>
+	<td class="tooltipColor">@tooltipColor</td>
+	<td class="bt-tooltipColor"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="tooltipBackground">@tooltipBackground</td>
+	<td class="bt-tooltipBackground"></td>
+	<td></td>
+</tr>
+<tr>
+	<td colspan="2" class="tooltipArrowWidth">@tooltipArrowWidth</td>
+	<td>5px</td>
+</tr>
+<tr>
+	<td class="tooltipArrowColor">@tooltipArrowColor</td>
+	<td class="bt-tooltipArrowColor"></td>
+	<td>@tooltipBackground</td>
+</tr>
+
+<tr>
+	<td class="popoverBackground">@popoverBackground</td>
+	<td class="bt-popoverBackground"></td>
+	<td></td>
+</tr>
+<tr>
+	<td colspan="2" class="popoverArrowWidth">@popoverArrowWidth</td>
+	<td>10px</td>
+</tr>
+<tr>
+	<td class="popoverArrowColor">@popoverArrowColor</td>
+	<td class="bt-popoverArrowColor"></td>
+	<td></td>
+</tr>
+<tr>
+	<td class="popoverTitleBackground">@popoverTitleBackground</td>
+	<td class="bt-popoverTitleBackground"></td>
+	<td>darken(@popoverBackground, 3%)</td>
+</tr>
+
+<tr>
+	<td class="subtitle" colspan="3">Special enhancement for popovers
+<tr>
+	<td colspan="2" class="popoverArrowOuterWidth">@popoverArrowOuterWidth</td>
+	<td>@popoverArrowWidth + 1</td>
+</tr>
+<tr>
+	<td class="popoverArrowOuterColor">@popoverArrowOuterColor</td>
+	<td class="bt-popoverArrowOuterColor"></td>
+	<td></td>
+</tr>
+
+
+
+<tr>
+	<td class="subtitle" colspan="3">GRID</td>
+</tr>
+
+<tr>
+	<td class="subtitle" colspan="3">Default 940px grid</td>
+</tr>
+<tr>
+	<td colspan="2" class="gridColumns">@gridColumns</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td colspan="2" class="gridColumnWidth">@gridColumnWidth</td>
+	<td>60px</td>
+</tr>
+<tr>
+	<td colspan="2" class="gridGutterWidth">@gridGutterWidth</td>
+	<td>20px</td>
+</tr>
+<tr>
+	<td colspan="2" class="gridRowWidth">@gridRowWidth</td>
+	<td>(@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1))</td>
+</tr>
+
+<tr>
+	<td class="subtitle" colspan="3">1200px min</td>
+</tr>
+<tr>
+	<td colspan="2" class="gridColumnWidth1200">@gridColumnWidth1200</td>
+	<td>70px</td>
+</tr>
+<tr>
+	<td colspan="2" class="gridGutterWidth1200">@gridGutterWidth1200</td>
+	<td>30px</td>
+</tr>
+<tr>
+	<td colspan="2" class="gridRowWidth1200">@gridRowWidth1200</td>
+	<td>(@gridColumns * @gridColumnWidth1200) + (@gridGutterWidth1200 * (@gridColumns - 1))</td>
+</tr>
+
+<tr>
+	<td class="subtitle" colspan="3">768px-979px</td>
+</tr>
+<tr>
+	<td colspan="2" class="gridColumnWidth768">@gridColumnWidth768</td>
+	<td>42px</td>
+</tr>
+<tr>
+	<td colspan="2" class="gridGutterWidth768">@gridGutterWidth768</td>
+	<td>20px</td>
+</tr>
+<tr>
+	<td colspan="2" class="gridRowWidth768">@gridRowWidth768</td>
+	<td>(@gridColumns * @gridColumnWidth768) + (@gridGutterWidth768 * (@gridColumns - 1))</td>
+</tr>
+
+
+<tr>
+	<td class="subtitle" colspan="3">Fluid grid</td>
+</tr>
+<tr>
+	<td colspan="2" class="fluidGridColumnWidth">@fluidGridColumnWidth</td>
+	<td>percentage(@gridColumnWidth/@gridRowWidth)</td>
+</tr>
+<tr>
+	<td colspan="2" class="fluidGridGutterWidth">@fluidGridGutterWidth</td>
+	<td>percentage(@gridGutterWidth/@gridRowWidth)</td>
+</tr>
+
+<tr>
+	<td class="subtitle" colspan="3">1200px min</td>
+</tr>
+<tr>
+	<td colspan="2" class="fluidGridColumnWidth1200">@fluidGridColumnWidth1200</td>
+	<td>percentage(@gridColumnWidth1200/@gridRowWidth1200)</td>
+</tr>
+<tr>
+	<td colspan="2" class="fluidGridGutterWidth1200">@fluidGridGutterWidth1200</td>
+	<td>percentage(@gridGutterWidth1200/@gridRowWidth1200)</td>
+</tr>
+
+<tr>
+	<td colspan="3" class="subtitle" colspan="3">768px-979px</td>
+</tr>
+<tr>
+	<td colspan="2" class="fluidGridColumnWidth768">@fluidGridColumnWidth768</td>
+	<td>percentage(@gridColumnWidth768/@gridRowWidth768)</td>
+</tr>
+<tr>
+	<td colspan="2" class="fluidGridGutterWidth768">@fluidGridGutterWidth768</td>
+	<td>percentage(@gridGutterWidth768/@gridRowWidth768)</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

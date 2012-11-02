@@ -1,8 +1,25 @@
 TODO
 ----
-- voir RTL
-- créer logo et icone JSB
-- error.php et offline.php avec un look bootstrap
+
+
+31/10/2012
+--------------------------
+- index.php: correction bugs
+- hauteur identique des user-top et bottom par JS et création modChrome dans html/modules.php
+- classes box-icon-xxx
+- remplacement des icon bootstrap par awesome-font
+- nettoyage et organisation des fichiers LESS
+- et plein d'autres petites choses ...
+
+
+16/10/2012 
+--------------------------
+- index.php
+  - JS chargé en tête du head
+  - ordre des div pour prise en charge classe comme well
+  - corrections diverses
+- remplacement sprite bootstrap par font-awesome
+- création jsb/jsb-html.less pour css spécifiques aux surcharges html 
 
 10/10/2012 07:00 by Lomart
 --------------------------

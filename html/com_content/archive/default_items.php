@@ -13,6 +13,8 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 $params = &$this->params;
 ?>
 
+<div class="badge badge-success">com_content\archive\default_items.php</div>
+
 <div id="archive-items">
 	<?php foreach ($this->items as $i => $item) : ?>
 	<div class="row<?php echo $i % 2; ?>">

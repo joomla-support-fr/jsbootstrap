@@ -1,0 +1,74 @@
+// --------------------------------------------------------------------------------
+// JSB-HTML : CSS POUR LES SURCHARGES HTML
+// crée par lomart - 15-09-2012
+// --------------------------------------------------------------------------------
+
+
+
+// info de com_content
+.article-info {
+	color:@gray;
+	font-size:90%;
+	border-bottom: 1px dotted #ddd;
+	margin-bottom: 8px;
+	// ne pas afficher le dernier séparateur vertical
+	.separator:last-child {display:none;}
+	// empêcher la césure des blos info
+	.item {white-space: nowrap;}
+	// les icônes
+	[class^="icon-"]:before { color:green; padding: 0 4px; font-size:120%;}
+	// conserver auteur+icones sur le même ligne
+	.row1-right {white-space: nowrap;}
+	// afficher les votes dans une colonne à gauche des infos 
+	.rating{float:left; margin-right:15px;}
+}
+
+// tooltip et hastip de Joomla
+.tip-wrap {
+	padding:8px; 
+	z-index:100000; 
+	#gradient > .vertical(@white, darken(@white,5));
+	border: solid 1px @gray;
+	.border-radius(4px);
+	.tip-title {
+		font-weight: bold;
+		border-bottom : 1px dotted @gray;
+	}
+	.tip-text {
+		font-size:85%;
+	}
+}
+
+// mod_articles_latest
+// spécial JSB: la surcharge affiche la date de l'article le plus récent affiché
+// ----------------------------------------------------------------------
+ul.latestnews {
+	padding:0;
+	li {line-height:14px;}
+}
+.last-update {
+	color:#666; 
+	font-style:italic; 
+	border-bottom:1px dashed #999;
+}
+
+// mod_search
+// ----------------------------------------------------------------------
+.phrases-box input[type=radio] {
+	float:left;
+	margin-right:10px;
+}
+// les résultats
+.result-title {
+	border-bottom: 1px @grayLighter solid;
+	margin-top: 10px;
+}
+.result-created, .result-category {
+ font-weight:normal;
+}
+
+.navbar .search-module .btn {
+	padding-top: 1px;
+	padding-bottom: 1px;
+	margin-top: 10px;
+}

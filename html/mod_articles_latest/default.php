@@ -9,12 +9,19 @@
 // no direct access
 defined('_JEXEC') or die;
 ?>
+
+
+<?php if ($list[0]) { ?>
+	<div class="last-update"><i class="icon-calendar"></i>&nbsp;
+	<?php echo JHtml::_('date', $list[0]->modified, JText::_('DATE_FORMAT_LC2')); ?></div>
+<?php } ?>
+
 <ul class="latestnews nav nav-list">
-<?php foreach ($list as $item) :  ?>
+<?php foreach ($list as $item) : ?>
 	<li>
 		<a href="<?php echo $item->link; ?>">
 			<i class="icon-file"></i>
-			<?php echo $item->title; ?></a>
+			<?php echo $item->title ?></a>
 	</li>
 <?php endforeach; ?>
 </ul>

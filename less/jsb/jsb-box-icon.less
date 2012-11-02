@@ -1,0 +1,40 @@
+// ----------------------------------------------------------------------
+// JSB-BOX-ICON : pave texte avec icones
+// ----------------------------------------------------------------------
+// lomart 20-10-12
+
+// Pour ajouter un type de box-icon, il suffit de créer une règle .box-icon-xxx
+// on indique la personnalisation sachant que l'arrondi, le padding et le box-shadow sont automatiques
+// les icônes sont à mettre dans le dossier templates/jsbootstrap/images/box
+
+// ***** BOX-ICON ****
+[class*="box-icon"] {
+	.border-radius(8px);
+	padding: 10px 5px 5px 40px;
+	min-height: 30px;
+	.box-shadow(1px 1px 3px rgba(0,0,0,0.2)); 
+}
+
+.box-icon-trophy { 
+	background: url(../images/box/trophy.png) no-repeat scroll left center lightyellow; 
+	border: solid 1px darken(lightyellow, 10);
+}
+.box-icon-info { 
+	background: url(../images/box/info.png) no-repeat scroll left top lightcyan; 
+	border: solid 1px darken(lightcyan, 10);
+}
+.box-icon-date { 
+	background: url(../images/box/date.png) no-repeat scroll 5px center; 
+	line-height: 28px;  // oui car mono ligne
+	min-height:32px;
+	.box-shadow(none);
+}
+
+
+// boîte sans icone
+.box {
+	border: @gray 1px solid;
+	.border-radius(6px);
+	padding:5px;
+	.box-shadow(1px 1px 3px rgba(0,0,0,0.2)); 
+}

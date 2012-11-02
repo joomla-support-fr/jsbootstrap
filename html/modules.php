@@ -17,7 +17,37 @@ defined('_JEXEC') or die('Restricted access');
  * three arguments.
  */
 
+/*
+ * ajoute la classe jsb-userbottom uniquement au premier parent
+ * alors qu'un suffixe l'ajoute à toutes
+*/ 
+?>
 
+<?php 
+function modChrome_JSBusertop($module, &$params, &$attribs)
+{
+	if (!empty ($module->content)) { ?>
+		<div class="jsb-usertop moduletable<?php echo htmlspecialchars($params->get('moduleclass_sfx')); ?>">
+			<?php if ($module->showtitle != 0) : ?>
+			<h3><span><?php echo $module->title; ?></span></h3>
+			<?php endif; ?>
+		<?php echo $module->content; ?></div>
+<?php };
+} ?>
+ 
+<?php 
+function modChrome_JSBuserbottom($module, &$params, &$attribs)
+{
+	if (!empty ($module->content)) { ?>
+		<div class="jsb-userbottom moduletable<?php echo htmlspecialchars($params->get('moduleclass_sfx')); ?>">
+			<?php if ($module->showtitle != 0) : ?>
+			<h3><span><?php echo $module->title; ?></span></h3>
+			<?php endif; ?>
+		<?php echo $module->content; ?></div>
+<?php };
+} ?>
+ 
+<?php  
 /*
  * Default Module Chrome that has sematic markup and has best SEO support
  */

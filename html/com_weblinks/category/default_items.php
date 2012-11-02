@@ -26,6 +26,9 @@ $n = count($this->items);
 $listOrder	= $this->escape($this->state->get('list.ordering'));
 $listDirn	= $this->escape($this->state->get('list.direction'));
 ?>
+
+<div class="badge badge-success">com_weblinks\category\default_items.php</div>
+
 <?php if (empty($this->items)) : ?>
 
 <p> <?php echo JText::_('COM_WEBLINKS_NO_WEBLINKS'); ?></p>

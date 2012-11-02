@@ -17,6 +17,9 @@ $urls = json_decode($this->item->urls);
 $params = $this->item->params;
 if ($urls && (!empty($urls->urla) || !empty($urls->urlb) || !empty($urls->urlc))) :
 ?>
+
+<div class="badge badge-success">com_content\article\default_links.php</div>
+
 <div class="content-links">
 	<ul class="nav nav-tabs nav-stacked">
 		<?php

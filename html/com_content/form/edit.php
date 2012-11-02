@@ -26,6 +26,8 @@ if (!$editoroptions):
 endif;
 ?>
 
+<div class="badge badge-success">com_content\form\edit.php</div>
+
 <script type="text/javascript">
 	Joomla.submitbutton = function(task) {
 		if (task == 'article.cancel' || document.formvalidator.isValid(document.id('adminForm'))) {
